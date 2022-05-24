@@ -24,7 +24,7 @@ input.onButtonPressed(Button.A, function () {
         pins.servoWritePin(AnalogPin.P9, 180)
         basic.pause(500)
     } else {
-        pins.servoWritePin(AnalogPin.P9, 180)
+        pins.servoWritePin(AnalogPin.P9, 0)
         basic.pause(500)
     }
 })
