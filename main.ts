@@ -1,5 +1,5 @@
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    ultrasonic_distance = Environment.sonarbit_distance(Environment.Distance_Unit.Distance_Unit_cm, DigitalPin.P7)
+    ultrasonic_distance = Environment.sonarbit_distance(Environment.Distance_Unit.Distance_Unit_cm, DigitalPin.P6)
     IR = pins.digitalReadPin(DigitalPin.P2)
     if (ultrasonic_distance < 100 && ultrasonic_distance < 10) {
         if (IR == 1) {
@@ -24,7 +24,7 @@ input.onButtonPressed(Button.A, function () {
         pins.servoWritePin(AnalogPin.P9, 180)
         basic.pause(500)
     } else {
-        pins.servoWritePin(AnalogPin.P9, 0)
+        pins.servoWritePin(AnalogPin.P9, 180)
         basic.pause(500)
     }
 })
@@ -38,7 +38,7 @@ input.onButtonPressed(Button.AB, function () {
 input.onButtonPressed(Button.B, function () {
     temp = Environment.dht11value(Environment.DHT11Type.DHT11_temperature_C, DigitalPin.P3)
     basic.pause(5000)
-    RH = Environment.dht11value(Environment.DHT11Type.DHT11_humidity, DigitalPin.P4)
+    RH = Environment.dht11value(Environment.DHT11Type.DHT11_humidity, DigitalPin.P3)
     basic.pause(5000)
     OLED.clear()
     OLED.writeStringNewLine("temp" + temp)
